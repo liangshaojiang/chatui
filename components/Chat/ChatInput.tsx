@@ -121,7 +121,7 @@ export const ChatInput: FC<Props> = ({ onSend, messageIsStreaming, model, stopCo
         </div>
       </div>
       <div className="px-3 pt-2 pb-3 text-center text-xs text-black/50 dark:text-white/50 md:px-4 md:pt-3 md:pb-6">
-        Chatbot Powered By OpenAI , created by DayDream.
+          Powered By liangshaojiang.
       </div>
     </div>
   );
