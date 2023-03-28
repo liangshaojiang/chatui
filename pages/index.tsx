@@ -442,7 +442,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>ChatBot</title>
+        <title>智能AI聊天机器人</title>
         <meta
           name="description"
           content="ChatGPT but better."
