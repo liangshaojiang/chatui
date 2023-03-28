@@ -330,30 +330,7 @@ export default function Home() {
     setSelectedConversation(single);
     setConversations(all);
   };
-
-
-  // 字符串解密
-   const      fromCode= (str:String)=> {
-            //定义密钥，36个字母和数字
-            var key = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            var len = key.length;  //获取密钥的长度
-            var b, b1, b2, b3, d = 0, s;  //定义临时变量
-            s = new Array(Math.floor(str.length / 3));  //计算加密字符串包含的字符数，并定义数组
-            b = s.length;  //获取数组的长度
-            for (var i = 0; i < b; i ++) {  //以数组的长度循环次数，遍历加密字符串
-                b1 = key.indexOf(str.charAt(d));  //截取周期内第一个字符串，计算在密钥中的下标值
-                d ++;
-                b2 = key.indexOf(str.charAt(d));  //截取周期内第二个字符串，计算在密钥中的下标值
-                d ++;
-                b3 = key.indexOf(str.charAt(d));  //截取周期内第三个字符串，计算在密钥中的下标值
-                d ++;
-                s[i] = b1 * len * len + b2 * len + b3  //利用下标值，反推被加密字符的Unicode编码值
-            }
-            b = eval("String.fromCharCode(" + s.join(',') + ")");  // 用fromCharCode()算出字符串
-            return b ;  //返回被解密的字符串
-        }
-
-
+ 
   const handleClearConversations = () => {
     setConversations([]);
     localStorage.removeItem("conversationHistory");
@@ -458,7 +435,7 @@ export default function Home() {
       </Head>
       {selectedConversation && (
         <main className={`flex flex-col h-screen w-screen text-white dark:text-white text-sm ${lightMode}`}>
-          <div className="sm:hidden w-full fixed top-0">
+          <div className="fixed top-0 w-full sm:hidden">
             <Navbar
               selectedConversation={selectedConversation}
               onNewConversation={handleNewConversation}
