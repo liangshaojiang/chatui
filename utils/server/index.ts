@@ -28,6 +28,8 @@ export const OpenAIStream = async (model: OpenAIModel, systemPrompt: string, key
     throw new Error(`OpenAI API returned an error: ${statusText}`);
   }
 
+
+  
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
 
