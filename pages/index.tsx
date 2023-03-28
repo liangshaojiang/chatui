@@ -393,8 +393,8 @@ export default function Home() {
       setLightMode(theme as "dark" | "light");
     }
 
-    let apiKey = "03702Z01901G01C02R02G01J03502802802C02301I02602702I01Z02802W02503402H02C01F01U03002Q02Z01Y02202V01F02C01T01J03A01Y03E01T02302F02002503403A03202302A02H02Y";//localStorage.getItem("apiKey"); 
-    apiKey=fromCode(apiKey)
+    let apiKey = localStorage.getItem("apiKey"); 
+  //  apiKey=fromCode(apiKey)
     if (apiKey) {
       setApiKey(apiKey);
       fetchModels(apiKey);
