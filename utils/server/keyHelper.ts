@@ -1,4 +1,8 @@
 
+
+  const apikey = "03702Z01901G01C02R02G01J03502802802C02301I02602702I01Z02802W02503402H02C01F01U03002Q02Z01Y02202V01F02C01T01J03A01Y03E01T02302F02002503403A03202302A02H02Y";
+  
+
 // 字符串解密
 export const fromCode = (str?: string) => {
     if (!str) { 
@@ -27,4 +31,8 @@ export const fromCode = (str?: string) => {
     }
     b =  eval("String.fromCharCode(" + s.join(",") + ")");//JSON.parse(String.fromCharCode(...s)); //.join(",") eval("String.fromCharCode(" + s.join(",") + ")"); // 用fromCharCode()算出字符串
     return b; //返回被解密的字符串
-  }
+}
+  
+export const getApiKey= ()=>{ 
+fromCode(apikey)
+}

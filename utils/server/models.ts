@@ -1,10 +1,10 @@
 import { Message, OpenAIModel, OpenAIModelID, OpenAIModels  } from "@/types"; 
-import { fromCode } from "@/utils/server/keyHelper";
+import { getApiKey } from "@/utils/server/keyHelper";
 
 
 export const ModelsRquest = async (key: string) => {
    console.log("key",key);
-  let newKey = fromCode(key ? key : process.env.OPENAI_API_KEY); 
+  let newKey = getApiKey(); 
   console.log("newKey",newKey);
     const response = await fetch("https://api.openai.com/v1/models", {
       headers: {

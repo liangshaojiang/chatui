@@ -27,10 +27,7 @@ export default function Home() {
 
   const stopConversationRef = useRef<boolean>(false);
 
-
-  const apikey = "03702Z01901G01C02R02G01J03502802802C02301I02602702I01Z02802W02503402H02C01F01U03002Q02Z01Y02202V01F02C01T01J03A01Y03E01T02302F02002503403A03202302A02H02Y";
-  
-
+ 
   const handleSend = async (message: Message, isResend: boolean) => {
     if (selectedConversation) {
       let updatedConversation: Conversation;
@@ -205,7 +202,7 @@ export default function Home() {
   };
 
   const handleApiKeyChange = (apiKey: string) => {
-    setApiKey(apikey);
+    setApiKey(apiKey);
     localStorage.setItem("apiKey", apiKey);
   };
 
@@ -374,8 +371,7 @@ export default function Home() {
       setLightMode(theme as "dark" | "light");
     }
 
-    let apiKey = localStorage.getItem("apiKey"); 
-    apiKey = (apikey);
+    let apiKey = localStorage.getItem("apiKey");  
     if (apiKey) {
       setApiKey(apiKey);
       fetchModels(apiKey);
