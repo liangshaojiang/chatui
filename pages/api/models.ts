@@ -1,7 +1,11 @@
-import { OpenAIModel, OpenAIModelID, OpenAIModels } from "@/types";
+ 
+import { ModelsRquest } from "@/utils/server/models";
 
 export const config = {
-  runtime: "edge"
+  runtime: "edge",
+  unstable_allowDynamic: [
+    '/utils/server/**', // allows a single file 
+   ]
 };
 
 const handler = async (req: Request): Promise<Response> => {
@@ -10,31 +14,7 @@ const handler = async (req: Request): Promise<Response> => {
       key: string;
     };
 
-    const response = await fetch("https://api.openai.com/v1/models", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`
-      }
-    });
-
-    if (response.status !== 200) {
-      throw new Error("OpenAI API returned an error");
-    }
-
-    const json = await response.json();
-
-    const models: OpenAIModel[] = json.data
-      .map((model: any) => {
-        for (const [key, value] of Object.entries(OpenAIModelID)) {
-          if (value === model.id) {
-            return {
-              id: model.id,
-              name: OpenAIModels[value].name
-            };
-          }
-        }
-      })
-      .filter(Boolean);
+    let models =await ModelsRquest(key);
 
     return new Response(JSON.stringify(models), { status: 200 });
   } catch (error) {

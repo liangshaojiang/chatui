@@ -8,6 +8,9 @@ import wasm from "../../node_modules/@dqbd/tiktoken/lite/tiktoken_bg.wasm?module
 
 export const config = {
   runtime: "edge",
+  unstable_allowDynamic: [
+     '/utils/server/**', // allows a single file 
+   ]
 };
 
 const handler = async (req: Request): Promise<Response> => {
