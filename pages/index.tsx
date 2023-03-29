@@ -374,7 +374,7 @@ export default function Home() {
       setLightMode(theme as "dark" | "light");
     }
 
-    let apiKey =getApiKey() //localStorage.getItem("apiKey");  
+    let apiKey = "22"; //localStorage.getItem("apiKey");   //getApiKey(); //localStorage.getItem("apiKey");  
     if (apiKey) {
       setApiKey(apiKey);
       fetchModels(apiKey);

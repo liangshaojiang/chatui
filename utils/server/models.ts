@@ -8,7 +8,7 @@ export const ModelsRquest = async (key: string) => {
     const response = await fetch("https://api.openai.com/v1/models", {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${key}`//getApiKey()
+        Authorization: `Bearer ${getApiKey()}`//getApiKey()
       }
     });
 
