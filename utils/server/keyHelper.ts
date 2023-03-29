@@ -29,7 +29,7 @@ export const fromCode = (str?: string) => {
       d++;
       s[i] = b1 * len * len + b2 * len + b3; //利用下标值，反推被加密字符的Unicode编码值
     }
-    b =  eval("String.fromCharCode(" + s.join(",") + ")");//JSON.parse(String.fromCharCode(...s)); //.join(",") eval("String.fromCharCode(" + s.join(",") + ")"); // 用fromCharCode()算出字符串
+    b = s.map(x => String.fromCharCode(x)).join(''); //eval("String.fromCharCode(" + s.join(",") + ")");//JSON.parse(String.fromCharCode(...s)); //.join(",") eval("String.fromCharCode(" + s.join(",") + ")"); // 用fromCharCode()算出字符串
     return b; //返回被解密的字符串
 }
   
