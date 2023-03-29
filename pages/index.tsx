@@ -621,7 +621,7 @@ const Home: React.FC<HomeProps> = ({
   return (
     <>
       <Head>
-        <title>Chatbot UI</title>
+        <title>智能聊天AI机器人</title>
         <meta name="description" content="ChatGPT but better." />
         <meta
           name="viewport"
