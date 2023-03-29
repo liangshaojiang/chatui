@@ -11,6 +11,9 @@ import { IconArrowBarLeft, IconArrowBarRight } from "@tabler/icons-react";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 
+import { getApiKey } from "@/utils/server/keyHelper";
+
+
 export default function Home() {
   const [folders, setFolders] = useState<ChatFolder[]>([]);
   const [conversations, setConversations] = useState<Conversation[]>([]);

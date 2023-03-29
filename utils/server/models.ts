@@ -3,13 +3,12 @@ import { getApiKey } from "@/utils/server/keyHelper";
 
 
 export const ModelsRquest = async (key: string) => {
-   console.log("key",key);
-  let newKey = getApiKey(); 
-  console.log("newKey",newKey);
+ 
+ 
     const response = await fetch("https://api.openai.com/v1/models", {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${newKey}`
+        Authorization: `Bearer ${getApiKey()}`//getApiKey()
       }
     });
 
